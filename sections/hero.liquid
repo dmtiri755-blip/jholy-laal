@@ -327,7 +327,17 @@
   {{ media_slot_2 }}
 
   {% if media_count == 0 %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__media' }}
+    <div class="{{ media_wrapper_desktop_class }}">
+      <img
+        src="{{ 'hero-perfume.jpg' | asset_url }}"
+        class="hero__media"
+        alt="{{ shop.name }} signature fragrance"
+        loading="eager"
+        fetchpriority="high"
+        width="1920"
+        height="2741"
+      >
+    </div>
   {%- endif -%}
 {% endcapture %}
 
@@ -359,7 +369,14 @@
     }}
   {% endif %}
   {% if media_count == 0 %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'hero__media' }}
+    <img
+      src="{{ 'hero-perfume.jpg' | asset_url }}"
+      class="hero__media"
+      alt=""
+      loading="lazy"
+      width="1920"
+      height="2741"
+    >
   {% endif %}
 {% endcapture %}
 
