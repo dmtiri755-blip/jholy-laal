@@ -57,14 +57,20 @@
     {% endif %}
     data-testid="header-logo"
   >
-    {% render 'image',
-      image: settings.logo,
-      class: 'header-logo__image',
-      height: settings.logo_height,
-      alt_text_fallback: alt_text_fallback,
-      text_fallback: shop.name,
-      style: logo_style
-    %}
+    {% if settings.logo == blank %}
+      <span class="header-logo__wordmark">
+        <span class="header-logo__wordmark-main">Ambré</span><span class="header-logo__wordmark-amp">&amp;</span><span class="header-logo__wordmark-main">Noir</span>
+      </span>
+    {% else %}
+      {% render 'image',
+        image: settings.logo,
+        class: 'header-logo__image',
+        height: settings.logo_height,
+        alt_text_fallback: alt_text_fallback,
+        text_fallback: shop.name,
+        style: logo_style
+      %}
+    {% endif %}
   </span>
 
   {% if use_inverse_logo %}
@@ -85,6 +91,29 @@
 </a>
 
 {% stylesheet %}
+  .header-logo__wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45em;
+    white-space: nowrap;
+  }
+
+  .header-logo__wordmark-main {
+    font-family: var(--font-heading--family);
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+  }
+
+  .header-logo__wordmark-amp {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1em;
+    color: rgb(var(--color-foreground-rgb) / 0.55);
+  }
+
   .header-logo {
     display: flex;
     height: 100%;
