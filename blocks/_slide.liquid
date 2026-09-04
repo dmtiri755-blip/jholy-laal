@@ -96,10 +96,21 @@
     {%- else -%}
       {%- liquid
         assign modulo_result = block_index | modulo: 2
-        assign placeholder_variant = 2 | minus: modulo_result
-        assign placeholder_name = 'hero-apparel-' | append: placeholder_variant
+        assign fallback_asset = 'hero-perfume.jpg'
+        if modulo_result == 1
+          assign fallback_asset = 'hero-pureskin.jpg'
+        endif
+        assign fallback_loading = 'lazy'
+        if block_index == 0 and section_index == 1
+          assign fallback_loading = 'eager'
+        endif
       -%}
-      {{ placeholder_name | placeholder_svg_tag: 'slide__image' }}
+      <img
+        src="{{ fallback_asset | asset_url }}"
+        class="slide__image"
+        alt=""
+        loading="{{ fallback_loading }}"
+      >
     {%- endif -%}
   </div>
   <div
