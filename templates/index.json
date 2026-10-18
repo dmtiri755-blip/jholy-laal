@@ -303,7 +303,7 @@
         "mobile_card_size": "44cqw",
         "columns_gap": 40,
         "rows_gap": 68,
-        "icons_style": "arrow",
+        "icons_style": "none",
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
