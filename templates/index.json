@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "hero_jVaWmY": {
       "type": "slideshow",
@@ -14,17 +15,24 @@
         "slide_1": {
           "type": "_slide",
           "settings": {
+            "media_type_1": "image",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "flex-end",
             "gap": 16,
+            "background_color": "",
             "toggle_overlay": true,
             "overlay_color": "#12121266",
             "overlay_style": "solid",
             "gradient_direction": "to bottom",
-            "padding-inline-start": 48,
-            "padding-inline-end": 48,
             "padding-block-start": 48,
-            "padding-block-end": 72
+            "padding-block-end": 72,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
           },
           "blocks": {
             "heading": {
@@ -32,9 +40,26 @@
               "name": "t:names.heading",
               "settings": {
                 "text": "<p>A Signature Scent, Bottled in Luxury</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
                 "text_color": "{{ settings.color_palette.background }}",
-                "type_preset": "h2"
-              }
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "button": {
               "type": "button",
@@ -42,41 +67,64 @@
               "settings": {
                 "label": "Shop the Collection",
                 "link": "shopify://collections/all",
+                "open_in_new_tab": false,
                 "style_class": "button-custom",
                 "custom_button_background": "rgba(0,0,0,0)",
                 "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}"
-              }
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
-          "block_order": ["heading", "button"]
+          "block_order": [
+            "heading",
+            "button"
+          ]
         },
         "slide_2": {
           "type": "_slide",
           "settings": {
+            "media_type_1": "image",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "flex-end",
             "gap": 16,
+            "background_color": "",
             "toggle_overlay": true,
             "overlay_color": "#12121266",
             "overlay_style": "solid",
             "gradient_direction": "to bottom",
-            "padding-inline-start": 48,
-            "padding-inline-end": 48,
             "padding-block-start": 48,
-            "padding-block-end": 72
+            "padding-block-end": 72,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
           },
-          "blocks": {},
-          "block_order": []
+          "blocks": {}
         }
       },
-      "block_order": ["slide_1", "slide_2"],
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
       "name": "t:names.slideshow",
       "settings": {
         "display_mode": "full_frame",
         "section_width": "full-width",
+        "full_frame_on_mobile": false,
+        "slideshow_gap": 12,
+        "corner_radius": 0,
         "slide_height": "large",
         "content_position": "on-media",
+        "background_color": "",
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "slideshow_controls_style": "dots",
@@ -109,11 +157,13 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
             "video_position": "cover",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
+            "border_color": "",
             "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -131,10 +181,12 @@
                 "alignment": "left",
                 "type_preset": "h4",
                 "font": "var(--font-body--family)",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -152,6 +204,10 @@
                 "label": "View all",
                 "open_in_new_tab": false,
                 "style_class": "link",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -170,11 +226,13 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 0,
+            "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_color": "",
+            "border_radius": 9,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -189,6 +247,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
+                "border_color": "",
                 "border_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
@@ -211,6 +270,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
+                "text_color": "",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -236,6 +296,7 @@
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
+                "text_color": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
